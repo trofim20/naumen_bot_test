@@ -7,14 +7,14 @@ import static org.junit.jupiter.api.Assertions.*;
  * Класс тестов класса Container
  */
 class ContainerTest {
-    private Container container = new Container();
-    private Item item = new Item(1);
 
     /**
      * Проверка добавления элемента в контейнер
      */
     @Test
     void testAdd() {
+        Container container = new Container();
+        Item item = new Item(1);
         assertTrue(container.add(item));
         assertEquals(1, container.size());
         assertTrue(container.contains(item));
@@ -25,6 +25,8 @@ class ContainerTest {
      */
     @Test
     void testRemove() {
+        Container container = new Container();
+        Item item = new Item(1);
         container.add(item);
         assertTrue(container.remove(item));
         assertEquals(0, container.size());

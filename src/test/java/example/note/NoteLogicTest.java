@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * Класс тестов класса NoteLogic
  */
 class NoteLogicTest {
-    NoteLogic notelogic = new NoteLogic();
+    private NoteLogic notelogic = new NoteLogic();
 
     /**
      * Проверка работы добавления заметок и их просмотра
@@ -34,8 +34,10 @@ class NoteLogicTest {
      */
     @Test
     void testDel() {
-        notelogic.handleMessage("/add Note 1");//если я знаю что он не работает, я могу так реализовать, что бы он лег?
-        notelogic.handleMessage("/del");
+        notelogic.handleMessage("/add Note 1");
+        notelogic.handleMessage("/del Note 2");
+
+        notelogic.handleMessage("/del Note 2");
         String notes = notelogic.handleMessage("/notes");
         assertEquals("Your notes: Note 1", notes);
     }
