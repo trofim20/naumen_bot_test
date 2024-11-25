@@ -1,7 +1,9 @@
 package example.note;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
+
 /**
  * Класс тестов класса NoteLogic
  */
@@ -35,11 +37,9 @@ class NoteLogicTest {
     @Test
     void testDel() {
         notelogic.handleMessage("/add Note 1");
-        notelogic.handleMessage("/del Note 2");
-
+        notelogic.handleMessage("/add Note 2");
         notelogic.handleMessage("/del Note 2");
         String notes = notelogic.handleMessage("/notes");
         assertEquals("Your notes: Note 1", notes);
     }
-
 }
